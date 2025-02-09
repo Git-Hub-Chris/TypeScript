@@ -2656,6 +2656,11 @@ export interface AssignmentExpression<TOperator extends AssignmentOperatorToken>
     readonly operatorToken: TOperator;
 }
 
+/** @internal */
+export interface NullishCoalesceExpression extends BinaryExpression {
+    readonly operatorToken: Token<SyntaxKind.QuestionQuestionToken>;
+}
+
 export interface ObjectDestructuringAssignment extends AssignmentExpression<EqualsToken> {
     readonly left: ObjectLiteralExpression;
 }
